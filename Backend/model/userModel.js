@@ -30,9 +30,30 @@ isDisable:
 {
     type:Boolean,
     default:false
+},
+otp:{
+    type:Number,
+    default:0
+},
+otpExpiryTime:{
+    type:Date
+}, 
+isOtpVerified:{
+type:Boolean,
+default:false
+},
+isOtpUsed:
+{
+ type:Boolean,
+ default:false   
 }
 })
 
+
+// userExist[0].otp = otp 
+// userExist[0].otpExpiryTime = Date.now() + 10 * 60 * 1000;  // 10 minutes
+// userExist[0].isOtpVerified= false;
+// userExist.[0].isOtpUsed= false; 
 
 // const User= mongoose.model("UserModel", userSchema)
 // module.exports=User
