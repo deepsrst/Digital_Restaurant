@@ -118,7 +118,7 @@ exports.forgotPassword= async(req,res) =>{
      console.log("after save")
      await sendEmail({
          email :email,
-         subject : "Your Otp for digitalMOMO forgotPassword",
+         subject : "OTP for Password Reset.",
          message : `Your otp is ${otp} . Dont share with anyone`
      })
      res.status(200).json({

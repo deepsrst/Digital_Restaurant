@@ -10,7 +10,7 @@ const sendEmail = async (options) => {
   });
 
   const mailOptions = {
-    from: "Password Reset <digitalrestaurant@gmail.com>",
+    from: "Digital Restaurant <byebye@gmail.com>",
     to: options.email,
     subject: options.subject,
     text: options.message,
