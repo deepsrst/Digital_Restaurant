@@ -148,7 +148,8 @@ exports.veriyOTP= async (req,res)=>{
         })
     }
 
-    const currentTime = Date.now();
+    const currentTime = new Date().toUTCString();
+    console.log("current utc time is ",currentTime)
   if (currentTime > userExists[0].otpExpiryTime) {
   return  res.status(400).send('OTP has expired.');
   }
@@ -169,6 +170,7 @@ exports.veriyOTP= async (req,res)=>{
 
 
 exports.resetPassword = async(req,res)=>{
+
     const {otp,email,newPassword,confirmPassword} = req.body
 
     if(!otp || !email || !newPassword || !confirmPassword){
@@ -189,7 +191,7 @@ exports.resetPassword = async(req,res)=>{
         })
     }
 
-    const currentTime = Date.now();
+    const currentTime = new Date().toUTCString()
     if (currentTime > userExists[0].otpExpiryTime) {
     return  res.status(400).send('OTP has expired.');
     }
