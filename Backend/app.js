@@ -5,6 +5,7 @@ const { connectDatabase } = require("./database/databaseConnection");
 const app = express()
 const User = require("./model/userModel")
 const authRoute= require("./routes/authRoute")
+const productRoute = require("./routes/productRoute")
 require("dotenv").config()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
@@ -61,7 +62,8 @@ app.get("/", (req, res) => {
 
 
 
-app.use("",authRoute);
+app.use("/api",authRoute)
+app.use("/api",productRoute)
 
 app.listen(PORT, () => {
     console.log(`server has started at ${PORT}`)

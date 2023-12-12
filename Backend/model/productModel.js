@@ -22,7 +22,10 @@ productPrice:{
 },
 productStatus:{
     type:String,
-    enum:["draft","public"]
+    enum:["available","unavailable"]
 }
-
 })
+
+const product= mongoose.model("Product", productSchema)
+
+module.exports=product
